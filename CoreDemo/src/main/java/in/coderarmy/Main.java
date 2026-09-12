@@ -1,5 +1,6 @@
 package in.coderarmy;
 
+import in.coderarmy.notification.EmailService;
 import in.coderarmy.notification.NotificationService;
 import in.coderarmy.notification.SmsService;
 
@@ -8,8 +9,10 @@ import in.coderarmy.notification.SmsService;
 public class Main {
     static void main() {
 
-        NotificationService notification =new SmsService();
-        OrderService order =new OrderService(notification);
+        NotificationService notification =new EmailService();
+        //OrderService order =new OrderService(notification);
+        OrderService order = new OrderService();
+        order.setNotification(notification);
         order.placeOrder();
 
     }

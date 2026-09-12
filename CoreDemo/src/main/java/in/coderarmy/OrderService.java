@@ -12,9 +12,17 @@ public class OrderService {
         this.notification=notification;
     };
 
+    public  OrderService(){
+
+    }
+
     public void placeOrder(){
 
         System.out.println("Order placed");
         notification.sendNotification();
+    }
+
+    public void setNotification(NotificationService notification) {
+        this.notification = notification;
     }
 }
