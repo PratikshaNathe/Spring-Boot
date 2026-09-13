@@ -1,5 +1,6 @@
 package in.coderarmy;
 
+import org.springframework.aop.support.AopUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,8 +14,9 @@ public class Main {
         OrderService order = context.getBean(OrderService.class);
         order.order();
 
-        PaymentService paymentService = context.getBean(PaymentService.class);
-        paymentService.pay();
+        User user = context.getBean(User.class);
+        System.out.println(user.getName());
+
 
     }
 }
